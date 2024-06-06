@@ -1,0 +1,81 @@
+###############INSTRUCTIONS FOR THE PT AND FT EXPERIMENTS######################################################
+
+STORED-FORMAT OF THE FILES
+###############################################################################################################
+The files in a particulat PT-FT directory are named in the following manner
+PRE-TRAINED MODEL CHECKPOINTS    - checkpoint_final.pt
+FINE-TUNED MODEL CHECKPOINTS     - checkpoint_500.pt
+prediction_results_test_set.csv  - "id" "target" and "prediction" of the test set
+prediction_results_train_set.csv - "id" "prediction" and "target" of the train set 
+history_train.json               -  training loss
+history_val.json                 -  validation loss
+###############################################################################################################
+Data files are stored in the following format
+"property_name"-"trial_number"-"dataset_size".json
+e.g., bg_trial1_500.json
+###############################################################################################################
+*The two main folders "MULTI-PROPERTY" and "PAIR-WISE" contain the pre-trained  datasets 
+and the fine-tuned results in separate folders named according to the dataset size and name. 
+
+*To repeat any calculation copy the respective pre-trained checkpoint and dataset file from the 
+respective directories and python files according to the following instructions. 
+
+*The checkpoints of the scratch,941-FT, Large-PT-size models (both BG&FE), and the MPT models are available in the 
+One-drive link, sorted and stored according to the dataset name and size.
+################################################################################################################
+
+FILES REQUIRED FOR PRE-TRAINING
+###############################################################################################################
+1. read-pmg-matb.py
+2. config_git.json
+3. Respective json file
+4. Change the "data" tag of the train script
+5. Copy the files from PAIR-WISE/TRAINING-FILES/PAIR-WISE/alignn_files folder
+6. Change the n_val, n_train, epochs, learning rate parameters accordingly in the config_git.json file
+###############################################################################################################
+
+FILES REQUIRED FOR FINE-TUNING
+###############################################################################################################
+1. data.py and train.py files in REPO/PAIR-WISE/TRAINING-FILES/PAIR-WISE/alignn_files
+2. Respective json file 
+3. Respective fine-tune file corresponding to a strategy
+	*To freeze 2body and 3 body layers 	- 2b-3b-freeze.py	 
+	*To add new prediction head        	- new-pred-head.py
+	*To unfreeze last layer 	   	- unfreeze-last-layer.py
+	*To unfreeze all layers	           	- unfreeze-all-layers.py
+	*Add prediction head and freeze at 1	- new-pred-head-freeze-1.py
+	*Add prediction head and freeze at 6    - new-pred-head-freeze-6.py
+4. config_git.json file with respective number of datapoints as in 
+REPO/PAIR-WISE/TRAINING-FILES/pair-wise/config_files
+5. Pre-trained model checkpoint.pt
+6. Change the n_val, n_train, epochs, learning_rate paramters accordingly
+7. Change the "data" and "model_path" tags of the train script
+###############################################################################################################
+
+FILES REQUIRED FOR TESTING
+###############################################################################################################
+1. data_trial.py and train_trial.py files in REPO/PAIR-WISE/TRAINING-FILES/PAIR-WISE/alignn_files
+2. Respective config_git.json file in REPO/PAIR-WISE/TRAINING-FILES/PAIR-WISE/test-files
+3. test-file.py
+4. Fine-tuned model final checkpoint.pt
+5. Change the "data" and "model_path" tags of the test script
+###############################################################################################################
+
+FILES REQUIRED FOR MULTI-PROP TRAINING
+###############################################################################################################
+1. Respective checkpoint.pt file of the pre-trained model
+2. Files in REPO/MULTI-PROPERTY/TRAINING-FILES/alignn_files
+3. fine-tune-new-prop.py in REPO/MULTI-PROPERTY/TRAINING-FILES/multi-train
+4. Respective json file of the data
+5. Change the "data", "epochs", "train_split", "test_split", "val_split", "learning_rate", 
+and "checkpoint_fp" tags accordingly
+###############################################################################################################
+
+FILES REQUIRED FOR MULTI-PROP TESTING
+###############################################################################################################
+1. Fine-tuned final checkpoint.pt file
+2. Files in REPO/MULTI-PROPERTY/TRAINING-FILES/alignn_files
+3. test-fine-tune-new-prop.py in REPO/MULTI-PROPERTY/TRAINING-FILES/multi-train
+4. Respective json file of the test data
+###############################################################################################################
+
