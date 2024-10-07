@@ -1,8 +1,27 @@
+###############INSTRUCTIONS FOR ALIGNN(__version__ = "2023.04.07") INSTALLAION################################
+The "alignn" folder with the setup.py file is available on the repository.
+
+conda create --name alignn python=3.9
+conda activate alignn
+cd alignn
+python3 setup.py develop
+pip install dgl-cu111
+pip install pymatgen
+
+Alternatively,
+
+conda create --name alignn python=3.9
+conda activate alignn
+cd alignn
+conda install pytorch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 pytorch-cuda=11.8 -c pytorch -c nvidia
+conda install -c dglteam dgl-cuda11.3 dgl
+python3 setup.py develop
+pip install pymatgen
 ###############INSTRUCTIONS FOR THE PT AND FT EXPERIMENTS######################################################
 The checkpoint(.pt) files can be accessed from https://indianinstituteofscience-my.sharepoint.com/:f:/g/personal/reshmadevi_iisc_ac_in/Es_cvJqdvFNOh5qTVD1CG9QBTW-hMCVej_Vuln4kEaxzSw?e=v7LRSB
-STORED-FORMAT OF THE FILES
+STORED FORMAT OF THE FILES
 ###############################################################################################################
-The files in a particulat PT-FT directory are named in the following manner
+The files in a particular PT-FT directory are named in the following manner
 PRE-TRAINED MODEL CHECKPOINTS    - checkpoint_final.pt
 FINE-TUNED MODEL CHECKPOINTS     - checkpoint_500.pt
 prediction_results_test_set.csv  - "id" "target" and "prediction" of the test set
@@ -14,11 +33,11 @@ Data files are stored in the following format
 "property_name"-"trial_number"-"dataset_size".json
 e.g., bg_trial1_500.json
 ###############################################################################################################
-*The two main folders "MULTI-PROPERTY" and "PAIR-WISE" contain the pre-trained  datasets 
+*The two main folders, "MULTI-PROPERTY" and "PAIR-WISE" contain the pre-trained  datasets 
 and the fine-tuned results in separate folders named according to the dataset size and name. 
 
-*To repeat any calculation copy the respective pre-trained checkpoint and dataset file from the 
-respective directories and python files according to the following instructions. 
+*To repeat any calculation, copy the respective pre-trained checkpoint and dataset file from the 
+respective directories and Python files according to the following instructions. 
 
 *The checkpoints of the scratch,941-FT, Large-PT-size models (both BG&FE), and the MPT models are available in the 
 One-drive link, sorted and stored according to the dataset name and size.
@@ -39,16 +58,16 @@ FILES REQUIRED FOR FINE-TUNING
 1. data.py and train.py files in REPO/PAIR-WISE/TRAINING-FILES/PAIR-WISE/alignn_files
 2. Respective json file 
 3. Respective fine-tune file corresponding to a strategy
-	*To freeze 2body and 3 body layers 	- 2b-3b-freeze.py	 
+	*To freeze 2 body and 3 body layers 	- 2b-3b-freeze.py	 
 	*To add new prediction head        	- new-pred-head.py
-	*To unfreeze last layer 	   	- unfreeze-last-layer.py
+	*To unfreeze the last layer 	   	- unfreeze-last-layer.py
 	*To unfreeze all layers	           	- unfreeze-all-layers.py
 	*Add prediction head and freeze at 1	- new-pred-head-freeze-1.py
 	*Add prediction head and freeze at 6    - new-pred-head-freeze-6.py
-4. config_git.json file with respective number of datapoints as in 
+4. config_git.json file with the respective number of datapoints as in 
 REPO/PAIR-WISE/TRAINING-FILES/pair-wise/config_files
 5. Pre-trained model checkpoint.pt
-6. Change the n_val, n_train, epochs, learning_rate paramters accordingly
+6. Change the n_val, n_train, epochs, learning_rate parameters accordingly
 7. Change the "data" and "model_path" tags of the train script
 ###############################################################################################################
 
@@ -67,7 +86,7 @@ FILES REQUIRED FOR MULTI-PROP TRAINING
 2. Files in REPO/MULTI-PROPERTY/TRAINING-FILES/alignn_files
 3. fine-tune-new-prop.py in REPO/MULTI-PROPERTY/TRAINING-FILES/multi-train
 4. Respective json file of the data
-5. Change the "data", "epochs", "train_split", "test_split", "val_split", "learning_rate", 
+5. Change the "data," "epochs," "train_split," "test_split," "val_split," "learning_rate," 
 and "checkpoint_fp" tags accordingly
 ###############################################################################################################
 
