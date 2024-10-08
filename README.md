@@ -30,7 +30,8 @@ If pymatgen functionality is required, then use
 ```
 pip install pymatgen
 ```
-Alternatively, the following versions of pytorch, dgl, and cuda can be specifically stated during the installation on GPUs
+### Alternatively, the following versions of pytorch, dgl, and cuda can be specifically stated during the installation on GPUs
+
 Create a conda environment and activate it
 ```
 conda create --name alignn python=3.9
