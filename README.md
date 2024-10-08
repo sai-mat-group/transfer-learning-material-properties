@@ -1,7 +1,7 @@
 # Optimal pre-train/fine-tune strategies for accurate material property predictions
 
 This repository contains the pre-trained and fine-tuned atomistic line graph neural
-network (ALIGNN) architectures and the corresponding results for the calculations carried out as a part of the research paper titled "Optimal pre-train/fine-tune strategies for accurate material property predictions". The archived version of the manuscript is available at [arXiv](http://arxiv.org/abs/2406.13142).
+network ([ALIGNN](https://www.nature.com/articles/s41524-021-00650-1)) architectures and the corresponding results for the calculations carried out as a part of the research paper titled "Optimal pre-train/fine-tune strategies for accurate material property predictions". The archived version of the manuscript is available at [arXiv](http://arxiv.org/abs/2406.13142).
 
 The objective of the research is to study the influence of important handles such as the pre-train (PT) and fine-tune (FT) dataset sizes, FT strategies, and other important hyperparameters on employing pair-wise transfer learning (TL) in the prediction of material properties using graph neural network (GNN) based architectures. Importantly, we also develop a GNN framework that is simultaneously PT on multiple properties (MPT), enabling the construction of generalized GNN models. We used the ALIGNN architecture (__version__ = "2023.04.07", see below for installation instructions) for the PT and FT exercises performed in this work.
 
