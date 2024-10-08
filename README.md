@@ -13,6 +13,8 @@ In case you use any of the data here, we would appreciate a citation to our manu
 
 # INSTRUCTIONS FOR ALIGNN(__version__ = "2023.04.07") INSTALLAION
 The "alignn-src" folder with the setup.py file is available on the repository. The following commands can be used to install the package.
+
+
 Create a conda environment and activate it
 ```
 conda create --name alignn python=3.9
