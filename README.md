@@ -33,14 +33,17 @@ If pymatgen functionality is required, then use
 pip install pymatgen
 ```
 
-### Alternatively, the following versions of pytorch, dgl, and cuda can be specifically stated during the installation on GPUs
+### For installation on NVIDIA GPUs
+
+The preferred version of CUDA toolkit is 11.8, as available at the [NVIDIA developers](https://developer.nvidia.com/cuda-11-8-0-download-archive) website. Please install the CUDA toolkit and any necessary NVIDIA driver(s) before proceeding.
 
 Create a conda environment and activate it
 ```
 conda create --name alignn python=3.9
-conda activate alignn
+conda activate alignn --stack
 ```
-Install the specific pytorch, dgl, and cuda versions that are compatible. Create a cloned version of the "alignn-src" directory that is available in the repository. Run the setup.py file within the directory.
+
+Create a copy of the "alignn-src" directory that is available in this repository.  The versions of pytorch (2.2.1), dgl (11.3), and pytorch-cuda (11.8) need to be specifically stated during installation on GPUs, since they are compatible with the version of ALIGNN we used and did not create conflicts. Run the setup.py file within copied alignn-src directory, after the pytorch and dgl libraries have been installed.
 ```
 cd alignn-src
 conda install pytorch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 pytorch-cuda=11.8 -c pytorch -c nvidia
