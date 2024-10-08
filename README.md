@@ -13,7 +13,7 @@ In case you use any of the data here, we would appreciate a citation to our manu
 
 
 ## Instructions for ALIGNN installation
-The "alignn-src" folder with the setup.py file is available on the repository. The "README" file within the "alignn-src" folder is a replica of an older version of the README file in the original [ALIGNN repository](https://github.com/usnistgov/alignn). Hence, to reproduce the results in our manuscript, please use the following installation instructions instead of what is provided in the README file under "alignn-src". 
+The "alignn-src" folder with the setup.py file is available on the repository, which is the version of ALIGNN that we used to generate all the models shown in our work. The "README" file within the "alignn-src" folder is a replica of an older version of the README file in the original [ALIGNN repository](https://github.com/usnistgov/alignn). Hence, to reproduce the results in our manuscript, please use the following installation instructions instead of what is provided in the README file under "alignn-src". 
 
 ### For installation on typical Intel/AMD CPUs
 
