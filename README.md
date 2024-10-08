@@ -1,4 +1,4 @@
-# transfer-learning-material-properties
+# Optimal pre-train/fine-tune strategies for accurate material property predictions
 
 This repository contains the pre-trained and fine-tuned atomistic line graph neural
 network (ALIGNN) architectures and the corresponding results for the calculations carried out as a part of the research paper titled "Optimal pre-train/fine-tune strategies for accurate material property predictions". The archived version of the manuscript is available at [arXiv](http://arxiv.org/abs/2406.13142).
@@ -11,7 +11,7 @@ The training files required for each calculation are stored in the sub-folder TR
 
 In case you use any of the data here, we would appreciate a citation to our manuscript at [arXiv](http://arxiv.org/abs/2406.13142), and the eventually published one at (DoI-to-be-updated).
 
-###############INSTRUCTIONS FOR ALIGNN(__version__ = "2023.04.07") INSTALLAION################################
+# INSTRUCTIONS FOR ALIGNN(__version__ = "2023.04.07") INSTALLAION
 The "alignn-src" folder with the setup.py file is available on the repository.
 ```
 conda create --name alignn python=3.9
