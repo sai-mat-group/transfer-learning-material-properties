@@ -1,9 +1,9 @@
 ###############INSTRUCTIONS FOR ALIGNN(__version__ = "2023.04.07") INSTALLAION################################
-The "alignn" folder with the setup.py file is available on the repository.
+The "alignn-src" folder with the setup.py file is available on the repository.
 
 conda create --name alignn python=3.9
 conda activate alignn
-cd alignn
+cd alignn-src
 python3 setup.py develop
 pip install dgl-cu111
 pip install pymatgen
@@ -12,7 +12,7 @@ Alternatively,
 
 conda create --name alignn python=3.9
 conda activate alignn
-cd alignn
+cd alignn-src
 conda install pytorch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 pytorch-cuda=11.8 -c pytorch -c nvidia
 conda install -c dglteam dgl-cuda11.3 dgl
 python3 setup.py develop
