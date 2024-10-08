@@ -14,9 +14,7 @@ In case you use any of the data here, we would appreciate a citation to our manu
 
 ## Instructions for ALIGNN installation
 
-The code uses a modified version of the [ALIGNN](https://github.com/usnistgov/alignn) architecture - in the long term, we hope to include this model in the main "ALIGNN" project, but to replicate the training results of this paper, one can use the modified source code here as follows.
-
-The "alignn-src" folder with the setup.py file contains the modified version of ALIGNN that we used to generate all the models shown in our work. The "README" file within the "alignn-src" folder is a replica of an older version of the README file in the original [ALIGNN repository](https://github.com/usnistgov/alignn). Hence, to reproduce the results in our manuscript, please use the following installation instructions instead of what is provided in the README file under "alignn-src". 
+Our code uses a modified version of the [ALIGNN](https://github.com/usnistgov/alignn) architecture, as available under the "alignn-src" folder. In the long term, we hope to include our models in the main "ALIGNN" project, but to replicate the training results of our manuscript, one can use the modified source code here as follows.
 
 ### For installation on typical Intel/AMD CPUs
 
