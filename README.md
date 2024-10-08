@@ -12,22 +12,36 @@ The training files required for each calculation are stored in the sub-folder TR
 In case you use any of the data here, we would appreciate a citation to our manuscript at [arXiv](http://arxiv.org/abs/2406.13142), and the eventually published one at (DoI-to-be-updated).
 
 # INSTRUCTIONS FOR ALIGNN(__version__ = "2023.04.07") INSTALLAION
-The "alignn-src" folder with the setup.py file is available on the repository.
+The "alignn-src" folder with the setup.py file is available on the repository. The following commands can be used to install the package.
+Create a conda environment and activate it
 ```
 conda create --name alignn python=3.9
 conda activate alignn
+```
+Create a cloned version of the "alignn-src" directory that is available in the repository. Run the setup.py file within the directory.
+```
 cd alignn-src
 python3 setup.py develop
 pip install dgl-cu111
+```
+If pymatgen functionality is required, then use
+```
 pip install pymatgen
 ```
-Alternatively,
+Alternatively, the following versions of pytorch, dgl, and cuda can be specifically stated during the installation on GPUs
+Create a conda environment and activate it
 ```
 conda create --name alignn python=3.9
 conda activate alignn
+```
+Install the specific pytorch, dgl, and cuda versions that are compatible. Create a cloned version of the "alignn-src" directory that is available in the repository. Run the setup.py file within the directory.
+```
 cd alignn-src
 conda install pytorch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 pytorch-cuda=11.8 -c pytorch -c nvidia
 conda install -c dglteam dgl-cuda11.3 dgl
 python3 setup.py develop
+```
+If pymatgen functionality is required, then use
+```
 pip install pymatgen
 ```
