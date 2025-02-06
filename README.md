@@ -55,3 +55,6 @@ If pymatgen functionality is required, then use
 ```
 pip install pymatgen
 ```
+## Support
+
+This work was supported by EPSRC grants: EP/Y014405/1 and EP/Y000552/1
